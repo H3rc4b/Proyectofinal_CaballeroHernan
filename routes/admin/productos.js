@@ -133,7 +133,7 @@ router.post('/modificar', async (req, res, next) => {
       img_id
     }
     console.log(obj) // para ver si trae los datos
-    await productosModel.modificarnovedadbyid(obj, req.body.id);
+    await productosModel.modificarproductobyid(obj, req.body.id);
     res.redirect('/admin/productos');
   } catch (error) {
     console.log(error)
