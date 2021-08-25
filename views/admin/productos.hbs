@@ -1,0 +1,64 @@
+<div class="container" style="margin-top: 100px;">
+    {{!--fila 1 --}}
+    <div class="row">
+        <div class="col">
+            <p class="text-right">
+                <span> Hola {{usuario}}!</span>
+                <a href="/admin/login/logout" class="btn btn-danger">Cerrar sesion <i
+                        class="fas fa-sign-out-alt"></i></a>
+            </p>
+        </div>
+    </div>
+    {{!-- fin fila 1 --}}
+    {{!--fila 2 --}}
+    <div class="row">
+        <div class="col-7" style="margin-top: -9px;">
+            <h2>Listado de Productos</h2>
+        </div>
+        <div class="col-2 text-right">
+            <a href="/admin/productos/agregar" class="btn btn-success"> <i class="fas fa-plus"></i>Nuevo</a>
+        </div>
+        <div class="col-3">
+            <form class="form-inline" action="/admin/productos" method="get">
+                <input class="form-control" type="search" placeholder="Buscar" aria-label="Search" name="q" {{#if q}} value="{{q}}" {{/if}}>
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fas fa-search"
+                        aria-hidden="true"></i></button>
+            </form>
+        </div>
+    </div>
+    {{!-- fin fila 2 --}}
+    {{!-- fila 3 --}}
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Imagen</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each productos}}
+            <tr>
+                <th scope="row">{{id}}</th>
+                <td>{{titulo}}</td>
+                <td>{{{imagen}}}</td>
+                <td class="text-rigth">
+                    <a href="/admin/productos/modificar/{{id}}" class="btn btn-secondary"><i
+                            class="fas fa-pencil-alt"></i></a>
+                    <a href="/admin/productos/eliminar/{{id}}" class="btn btn-secondary"><i
+                            class="fas fa-trash"></i></a>
+                </td>
+
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{#if is_search}}
+    {{#unless productos.length}}
+    No se encontraron resultados para " <b>{{q}}</b>"
+    {{/unless}}
+    {{/if}}
+
+    {{!-- fin fila 3 --}}
+</div>
