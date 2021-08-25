@@ -13,31 +13,31 @@ router.get('/', async function (req, res, next) {
 
   //var productos = await productosModel.getproductos();
 
-var productos
-if (req.query.q === undefined) {
-  productos = await productosModel.getproductos();
-} else {
-  productos = await productosModel.buscarproductos(req.query.q);
-}
-
-productos = productos.map(producto => {
-  if (producto.img_id) {
-    const imagen = cloudinary.image(producto.img_id, {
-      width: 100,
-      height: 100,
-      crop: 'fill'
-    });
-    return {
-      ...producto,
-      imagen
-    }
+  var productos
+  if (req.query.q === undefined) {
+    productos = await productosModel.getproductos();
   } else {
-    return{
-    ...producto,
-    imagen: ''
-    }
+    productos = await productosModel.buscarproductos(req.query.q);
   }
-});
+
+  productos = productos.map(producto => {
+    if (producto.img_id) {
+      const imagen = cloudinary.image(producto.img_id, {
+        width: 100,
+        height: 100,
+        crop: 'fill'
+      });
+      return {
+        ...producto,
+        imagen
+      }
+    } else {
+      return {
+        ...producto,
+        imagen: ''
+      }
+    }
+  });
   res.render('admin/productos', {
     layout: 'admin/layout',
     usuario: req.session.nombre,
