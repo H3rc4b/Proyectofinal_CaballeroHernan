@@ -41,7 +41,7 @@ async function modificarproductobyid(obj, id) {
 } //cierra modificar
 // para buscar en productos
 async function buscarproductos(busqueda) {
- var query = 'select * from productos where titulo like ? or subtitulo like ? or cuerpo like ?';
+ var query = 'select * from productos where titulo like ? or cuerpo like ?';
  var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%']);
  return rows;
 }

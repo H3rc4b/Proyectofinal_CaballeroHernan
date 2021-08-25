@@ -1,140 +1,89 @@
-    <div class="container-fluid">
-        <!--abre el Nav-->
-        <nav class="navbar fixed-top navbar-expand-lg navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Carpinteria CH</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<div class="container-fluid">
+    <!--abre el Nav-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Carpinteria CH</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a data-scroll class="nav-link" href="#home">Inicio <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a data-scroll class="nav-link" href="#historia">Origenes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a data-scroll class="nav-link" href="#productos">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a data-scroll class="nav-link" href="#visitanos">Contacto</a>
-                    </li>
-        </nav>
-        <!--cierra el Nav-->
-        <!--abre el home-->
-        <div id="home" class="row aling-items-center hero">
-            <div class="col-lg-3 offset-lg-2">
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <h1>Carpinteria CH</h1>
-                <h3>Diseñamos y fabricamos muebles contemporáneos estandar y a medida.
-                    Contamos con un equipo altamente calificado de arquitectos y carpinteros. Fábrica ubicada en
-                    Berazategui </h3>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a data-scroll class="nav-link" href="#home">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a data-scroll class="nav-link" href="#historia">Origenes</a>
+                </li>
+                <li class="nav-item">
+                    <a data-scroll class="nav-link" href="#productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a data-scroll class="nav-link" href="#visitanos">Contacto</a>
+                </li>
+    </nav>
+    <!--cierra el Nav-->
+    <!--abre el home-->
+    <div id="home" class="row aling-items-center hero">
+        <div class="col-lg-3 offset-lg-2">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>Carpinteria CH</h1>
+            <h3>Diseñamos y fabricamos muebles contemporáneos estandar y a medida.
+                Contamos con un equipo altamente calificado de arquitectos y carpinteros. Fábrica ubicada en
+                Berazategui </h3>
         </div>
-        <!--cierra el home-->
+    </div>
+    <!--cierra el home-->
+    <footer>
+        <p id="text-footer" class="text-center" text-color>
+        <h2 style="color: lightgray;">Un poco sobre nosotros</h2>
+        </p>
+    </footer>
+    <!--abre el historia-->
+    <div id="historia" class="row aling-items-center py-4">
+
+        <div class="col-lg-2 col-m-3 offset-lg-2 d-none d-sm-block" id="historia1">
+
+        </div>
+        <div class="col-lg-2 col-m-3 d-none d-sm-block" id="historia2">
+        </div>
+        <div class="col-12 d-sm-none" id="historia3">
+        </div>
+        <div class="col-lg-4 col-md-6 mt-4 mt-sm-0">
+            <h3>
+                Somos una carpinteria familiar de 5ta generacion dedicada a la fabricacion e instalacion de muebles
+                solucionando problemas de espacio con diseños modernos
+            </h3>
+        </div>
+    </div>
+    <!--cierra el historia-->
+    <!--Abre el Productos-->
+    <div id="productos">
         <footer>
             <p id="text-footer" class="text-center" text-color>
-            <h2 style="color: lightgray;">Un poco sobre nosotros</h2>
+            <h2 style="color: lightgray;">Nuestros Productos</h2>
             </p>
         </footer>
-        <!--abre el historia-->
-        <div id="historia" class="row aling-items-center py-4">
+        {{#each productos}}
+        <div class="row mx-5">
+            <!--tarjeta1-->
+            <div class="col">
+                <div class="card{{id}}" style="width: 18rem;"></div>
+                <img src={{imagen}} class="card-img-top" alt="Imagen de targeta">
+                <div class="card-body">
+                    <h1>{{titulo}}</h1>
+                    <p>{{cuerpo}}</p>
 
-            <div class="col-lg-2 col-m-3 offset-lg-2 d-none d-sm-block" id="historia1">
-                
-            </div>
-            <div class="col-lg-2 col-m-3 d-none d-sm-block" id="historia2">
-            </div>
-            <div class="col-12 d-sm-none" id="historia3">
-            </div>
-            <div class="col-lg-4 col-md-6 mt-4 mt-sm-0">
-                <h3>
-                    Somos una carpinteria familiar de 5ta generacion dedicada a la fabricacion e instalacion de muebles
-                    solucionando problemas de espacio con diseños modernos
-                </h3>
+                </div>
+
             </div>
         </div>
-        <!--cierra el historia-->
-        <!--Abre el Productos-->
-        <div id="productos">
-            <footer>
-                <p id="text-footer" class="text-center" text-color>
-                <h2 style="color: lightgray;">Nuestros Productos</h2>
-                </p>
-            </footer>
-            <div class="row mx-5">
-                <!--tarjeta1-->
-                <div class="col">
-                    <div class="card" style="width: 18rem;"></div>
-                    <img src="../public/images/cocina.jpeg" class="card-img-top" alt="Imagen de targeta">
-                    <div class="card-body">
-                       <div id="titulo"><h1 >Mueble Laqueado</h1></div>
-                       <div id="cuerpo"> <p >Mueble de cocina totalmente Laqueado en Blanco-semimate</p></div>
-                    </div>
-
-                </div>
-                <!--tarjeta2-->
-                <div class="col">
-                    <div class="card" style="width: 18rem;"></div>
-                    <img src="../public/images/cocina2.jpeg" class="card-img-top" alt="Imagen de targeta">
-                    <div class="card-body">
-                        <h1>Mueble en Melamina</h1>
-                        <p>Mueble hecho totalmente en melamina Negra con detalles en color alumino y puerta con vidrio
-                            esmerilado</p>
-                    </div>
-
-                </div>
-                <!--tarjeta3-->
-                <div class="col">
-                    <div class="card" style="width: 18rem;"></div>
-                    <img src="../public/images/comedor.jpeg" class="card-img-top" alt="Imagen de targeta">
-                    <div class="card-body">
-                        <h1>Mueble Comedor</h1>
-                        <p>Es un mueble empotrado con puertas con varillas enchapas en roble americano laqueados al
-                            natural</p>
-                    </div>
-
-                </div>
-                <!--tarjeta4-->
-                <div class="col">
-                    <div class="card" style="width: 18rem;"></div>
-                    <img src="../public/images/rack para tv.jpeg" class="card-img-top" alt="Imagen de targeta">
-                    <div class="card-body">
-                        <h1>Rack para TV</h1>
-                        <p>Rack flotante laqueado en color gris ceniza con cajones para usos multiples</p>
-                    </div>
-
-                </div>
-                <!--tarjeta5-->
-                <div class="col">
-                    <div class="card" style="width: 18rem;"></div>
-                    <img src="../public/images/rack tv.jpeg" class="card-img-top" alt="Imagen de targeta">
-                    <div class="card-body">
-                        <h1>Mueble de TV</h1>
-                        <p>Este mueble de tv tiene incluido un vajillero vidriado e iluminado con luces led</p>
-                    </div>
-
-                </div>
-                <!--tarjeta6-->
-                <div class="col">
-                    <div class="card" style="width: 18rem;"></div>
-                    <img src="../public/images/paraiso.jpeg" class="card-img-top" alt="Imagen de targeta">
-                    <div class="card-body">
-                        <h1>Mueble de TV</h1>
-                        <p>En MDF enchapado en paraiso laqueado cpn tapa de doble espesor y etantes flotantes con luces
-                            led</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        {{/each}}
         <!--cierra el Productos-->
         <footer>
             <p id="text-footer" class="text-center" text-color>
@@ -155,7 +104,7 @@
                 <form action="/" method="POST">
                     <div class="row">
                         <div class="col"> Nombre
-                            <input type="text" class="form-control"name="nombre">
+                            <input type="text" class="form-control" name="nombre">
                         </div>
                         <div class="col"> Apellido
                             <input type="text" class="form-control" name="apellido">
