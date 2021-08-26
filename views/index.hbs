@@ -69,21 +69,23 @@
             <h2 style="color: lightgray;">Nuestros Productos</h2>
             </p>
         </footer>
-        {{#each productos}}
-        <div class="card-group">
+        <div class="row row-cols-2 row-cols-md-3">
+            {{#each productos}}
             <!--tarjeta1-->
-            <div class="col">
+            <div class="col mb-4">
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
                 <div class="card{{id}}" style="width: 18rem;"></div>
                 <img src={{imagen}} class="card-img-top" alt="Imagen de targeta">
                 <div class="card-body">
-                    <h1>{{titulo}}</h1>
+                    <h4>{{titulo}}</h4>
                     <p>{{cuerpo}}</p>
 
                 </div>
 
             </div>
-        </div>
-        {{/each}}
+            </div>
+            {{/each}}
+        </div>        
         <!--cierra el Productos-->
         <footer>
             <p id="text-footer" class="text-center" text-color>

@@ -1,7 +1,7 @@
 var pool = require('./bd');
 /*sirve par listar los productos*/
 async function getproductos() {
-  var query = 'select * from productos ';
+  var query = 'select * from productos';
   var rows = await pool.query(query);
   return rows;
 }

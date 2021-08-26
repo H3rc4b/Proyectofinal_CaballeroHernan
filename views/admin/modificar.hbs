@@ -3,10 +3,10 @@
         <div class="col-6 offset-3">
             <h2>Modificar Producto</h2>
             <form action="/admin/productos/modificar" method="post" enctype="multipart/form-data">
-                <input type="hidden" value="{{Producto.id}}" name="id">
+                <input type="hidden" value="{{Productos.id}}" name="id">
                 <div class="form-group">
                     <label for="">Titulo</label>
-                    <input type="text" class="form-control" name="titulo" value="{{Producto.titulo}}">
+                    <input type="text" class="form-control" name="titulo" value="{{Productos.titulo}}">
                 </div>
                 <div>
                     <p>
@@ -14,19 +14,19 @@
                     </p>
                     <p>
                         <label><input type="checkbox" name="img_delete" id="img_delete" value="1">
-                        Eliminar imagen actual?</label>
-                        <input type="hidden" name="img_original" value="{{Producto.img_id}}">
+                            Eliminar imagen actual?</label>
+                        <input type="hidden" name="img_original" value="{{Productos.img_id}}">
                     </p>
                 </div>
                 <div class="form-group">
                     <label for="">Cuerpo</label>
-                    <textarea name="cuerpo" class="form-control">{{Producto.cuerpo}}</textarea>
+                    <textarea name="cuerpo" class="form-control">{{Productos.cuerpo}}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Modificar</button>
             </form>
             {{#if error}}
             <p>{{message}}</p>
             {{/if}}
-        </div> 
+        </div>
     </div>
 </div>
